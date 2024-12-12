@@ -66,7 +66,7 @@ const Formulario = () => {
             name="nombre"
             value={formData.nombre}
             onChange={handleChange}
-            required
+            
           />
           {errors.nombre && <p className="error-message">{errors.nombre}</p>}
         </div>
@@ -79,7 +79,7 @@ const Formulario = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            required
+            
           />
           {errors.email && <p className="error-message">{errors.email}</p>}
         </div>
@@ -91,7 +91,7 @@ const Formulario = () => {
             name="mensaje"
             value={formData.mensaje}
             onChange={handleChange}
-            required
+            
           />
           {errors.mensaje && <p className="error-message">{errors.mensaje}</p>}
         </div>

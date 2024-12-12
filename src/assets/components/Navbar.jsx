@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../img/color-bw-03.svg';
+import logo from "../../img/color-bw-03.svg";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
         {/* Usamos el logo importado */}
-        <Link to="/" className="logo">
-          <img src={logo} alt="Logo" className="logo-img" />
-        </Link>
+        <a href="/" className="">
+        <img src={logo} alt="Logo" className="logo-img" />
+        </a>
 
         {/* Enlaces de navegación */}
         <ul className="nav-links">

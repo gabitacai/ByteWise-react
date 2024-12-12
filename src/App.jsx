@@ -5,7 +5,7 @@ import Dashboard from './assets/components/Dashboard';
 import Transacciones from './assets/components/Transacciones';
 import TareasHabitos from './assets/components/TareasHabitos';
 import Navbar from './assets/components/Navbar';
-import Formulario from './assets/components/Formulario'; // Importamos el nuevo componente
+import Formulario from './assets/components/Formulario'; 
 import './assets/styles/App.css';
 
 function App() {
