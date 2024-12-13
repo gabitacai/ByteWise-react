@@ -17,8 +17,8 @@ const Navbar = () => {
           <li><Link to="/dashboard">Dashboard</Link></li>
           <li><Link to="/transacciones">Transacciones</Link></li>
           <li><Link to="/tareas-habitos">Tareas y hábitos</Link></li>
-          <li><Link to="/register">Registrar</Link></li>
-          <li><Link to="/formulario">Formulario</Link></li> {/* Enlace al formulario */}
+          <li><Link to="/register">Registrarse</Link></li>
+          <li><Link to="/formulario">Formulario de contacto</Link></li> {/* Enlace al formulario */}
         </ul>
       </div>
     </nav>

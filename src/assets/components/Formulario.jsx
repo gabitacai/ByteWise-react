@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Formulario = () => {
-  // Estado para manejar los valores del formulario y los errores
+  
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
@@ -13,12 +13,12 @@ const Formulario = () => {
     mensaje: '',
   });
 
-  // Maneja el cambio de los inputs
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
     
-    // Validar en tiempo real
+    
     validateField(name, value);
   };
 
