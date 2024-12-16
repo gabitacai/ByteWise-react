@@ -13,13 +13,12 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    // Cargar el estado del modo oscuro desde localStorage
+    
     const savedMode = localStorage.getItem('darkMode') === 'true';
     setDarkMode(savedMode);
   }, []);
 
   const toggleDarkMode = () => {
-    console.log("toggleDarkMode clicked"); // Para ver si la función se ejecuta
     setDarkMode((prevMode) => {
       const newMode = !prevMode;
       localStorage.setItem('darkMode', newMode);

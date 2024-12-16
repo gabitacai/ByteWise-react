@@ -82,7 +82,7 @@ p {
   color: #2e8b57;
 }
 
-/* General container */
+/* Container general */
 .register-container {
   max-width: 400px;
   margin: 0 auto;
@@ -94,7 +94,7 @@ p {
 :root {
   --clr-primary: #121212;
   --clr-secondary: #f2f2f2;
-  --clr-accent: green;
+  --clr-accent: #57b59e;
 }
 
 html {
@@ -124,7 +124,7 @@ header {
 .home-text p {
   display: block;
   font-size: 16px;
-  color: #034d06;
+  color: #117a59;
   font-weight: bold;
 }
 
@@ -157,7 +157,7 @@ textarea {
 
 button {
   padding: 10px 20px;
-  background-color: #50C878;
+  background-color: --clr-accent;
   border: none;
   color: white;
   font-size: 16px;
@@ -166,7 +166,7 @@ button {
 }
 
 button:hover {
-  background-color: #2e8b57;
+  background-color: #658b97;
 }
 
 .error-message {
@@ -240,7 +240,7 @@ footer a:hover {
 
 
 footer {
-  background-color: #68ac95;
+  background-color: #57afb5;
   color: #000000;
   text-decoration: none;
   padding: 0.5rem;
@@ -341,7 +341,7 @@ li {
 
 button {
   padding: 8px 12px;
-  background-color: #4CAF50;
+  background-color: #50c878;
   color: white;
   border: none;
   border-radius: 4px;
@@ -418,6 +418,11 @@ h2 {
 .dark .form-container {
   background-color: #333;
   color: var(--clr-primary);
+}
+
+.dark footer{
+  background-color: #4a4a4a;
+  color: #fff;
 }
 
 .theme-toggle-btn {
