@@ -7,6 +7,7 @@ import Transacciones from './assets/components/Transacciones';
 import TareasHabitos from './assets/components/TareasHabitos';
 import Navbar from './assets/components/Navbar';
 import Formulario from './assets/components/Formulario';
+import Footer from './assets/components/Footer';
 import './assets/styles/App.css';
 
 function App() {
@@ -41,9 +42,7 @@ function App() {
             <Route path="*" element={<h2>¡UPS! Esa página no existe...</h2>} />
           </Routes>
         </main>
-        <footer>
-          &copy; Gabriela F | 2024 todos los derechos reservados.
-        </footer>
+        <Footer />
       </BrowserRouter>
     </div>
   );

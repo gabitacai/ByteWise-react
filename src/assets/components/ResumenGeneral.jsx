@@ -12,7 +12,7 @@ function ResumenGeneral() {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h3>Estado Financiero Actual</h3>
+            <h3>Estado Financiero Actual:</h3>
             <BarChart width={600} height={400} data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
@@ -21,7 +21,7 @@ function ResumenGeneral() {
                 <Bar dataKey="ingresos" fill="#8884d8" />
                 <Bar dataKey="gastos" fill="#82ca9d" />
             </BarChart>
-            <p>Ingreso Total: $10,000 | Gasto Total: $8,500</p>
+            <p><b>Ingreso Total: $10,000 | Gasto Total: $8,500</b></p>
         </div>
     );
 }

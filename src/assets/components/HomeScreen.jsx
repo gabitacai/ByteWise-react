@@ -5,8 +5,9 @@ function HomeScreen({ user }) {
     return (
         <div className="home-container">
             <div className="home-text">
-            <h1>¡Bienvenido, {user.name}, a ByteWise!</h1>
-            <p>¿Qué te gustaría hacer hoy?</p>
+                <h1>¡Bienvenido, {user.name}, a ByteWise!</h1>
+                <br />
+                <p>¿Qué te gustaría hacer hoy?</p>
             </div>
             <div className="home-options">
                 <div className="option-card">
@@ -27,7 +28,9 @@ function HomeScreen({ user }) {
                     <Link to="/tareas-habitos" className="btn btn-primary">Gestionar Tareas y Hábitos</Link>
                 </div>
             </div>
+            
         </div>
+        
     );
 }
 
