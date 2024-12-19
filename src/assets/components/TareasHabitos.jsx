@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 
 function TareasHabitos() {
-    // Estado inicial con algunas tareas de ejemplo
+    
     const [tareas, setTareas] = useState([
         { id: 1, descripcion: 'Hacer ejercicio', completada: false },
         { id: 2, descripcion: 'Leer un libro', completada: true },
         { id: 3, descripcion: 'Meditar', completada: false },
     ]);
 
-    // Estado para los inputs de nueva tarea
     const [nuevaTarea, setNuevaTarea] = useState('');
 
-    // Estado para la tarea en edición
+    
     const [editando, setEditando] = useState({ id: null, descripcion: '' });
 
-    // Función para agregar una nueva tarea
+   
     const agregarTarea = (e) => {
         e.preventDefault();
         const tarea = {
@@ -26,35 +25,34 @@ function TareasHabitos() {
         setNuevaTarea('');
     };
 
-    // Función para eliminar una tarea por ID
+    
     const eliminarTarea = (id) => {
         setTareas(tareas.filter(tarea => tarea.id !== id));
     };
 
-    // Función para marcar una tarea como completada
+    
     const toggleCompletada = (id) => {
         setTareas(tareas.map(tarea => 
             tarea.id === id ? { ...tarea, completada: !tarea.completada } : tarea
         ));
     };
 
-    // Función para manejar el inicio de la edición
     const iniciarEdicion = (id, descripcion) => {
         setEditando({ id, descripcion });
     };
 
-    // Función para manejar el cambio en el input de edición
+    
     const manejarCambioEdicion = (e) => {
         setEditando({ ...editando, descripcion: e.target.value });
     };
 
-    // Función para guardar los cambios de edición
+    
     const guardarEdicion = (e) => {
         e.preventDefault();
         setTareas(tareas.map(tarea => 
             tarea.id === editando.id ? { ...tarea, descripcion: editando.descripcion } : tarea
         ));
-        setEditando({ id: null, descripcion: '' }); // Reiniciar el estado de edición
+        setEditando({ id: null, descripcion: '' }); 
     };
 
     return (
@@ -66,7 +64,7 @@ function TareasHabitos() {
                 {tareas.map(tarea => (
                     <li key={tarea.id} className="tarea-item">
                         {editando.id === tarea.id ? (
-                            // Mostrar el formulario de edición si estamos editando esta tarea
+                            
                             <form className="tarea-editar-form" onSubmit={guardarEdicion}>
                                 <input 
                                     type="text" 

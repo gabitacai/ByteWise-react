@@ -424,7 +424,7 @@ label {
 .submit-btn {
   width: 100%;
   padding: 0.75rem;
-  background-color: #50c878;
+  background-color: var(--clr-accent);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -743,7 +743,148 @@ footer a:hover {
 
 .nueva-tarea-form input {
   padding: 10px;
-  flex: 1; /* Ocupa el espacio disponible */
+  flex: 1; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.nueva-tarea-form button {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: var(--clr-accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nueva-tarea-form button:hover {
+  background-color: #2e7b68;
+}
+
+/* TRANSACCIONES */
+
+.transacciones-container {
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6rem auto;
+}
+
+/* Lista de transacciones */
+.transacciones-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 700px; 
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 23rem;
+  overflow-y: scroll;
+}
+
+.transaccion-item {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.transaccion-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.transaccion-item span {
+  flex: 1; 
+  margin-right: 15px;
+  font-size: 16px;
+  word-wrap: break-word; 
+}
+
+
+.transaccion-item .buttons-container {
+  display: flex;
+  gap: 10px; 
+}
+
+
+.transaccion-item button.transaccion-btn {
+  background-color: #50c878; 
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.transaccion-item button.transaccion-btn:hover {
+  background-color: #45a049;
+}
+
+/* Botón de editar */
+.transaccion-item button.transaccion-edit-btn {
+  background-color: #ffa500; 
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.transaccion-item button.transaccion-edit-btn:hover {
+  background-color: #e69500;
+}
+
+/* Botón de eliminar */
+.transaccion-item button.transaccion-delete-btn {
+  background-color: #ff6347; 
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.transaccion-item button.transaccion-delete-btn:hover {
+  background-color: #e5533e;
+}
+
+/* Formulario para nueva transacción */
+.nueva-tarea-form {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 6px rgba(150, 150, 150, 0.427);
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 600px;
+}
+
+.nueva-tarea-form input {
+  padding: 10px;
+  flex: 1; 
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
@@ -878,20 +1019,20 @@ footer a:hover {
 }
 
 .dark .tareas-list {
-  background-color: #333; /* Fondo oscuro */
-  color: var(--clr-primary); /* Texto claro */
+  background-color: #333; 
+  color: var(--clr-primary); 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  width: 90%; /* Ocupa el 90% del contenedor */
-  max-width: 600px; /* Ancho máximo */  
+  width: 90%; 
+  max-width: 600px;  
   height: 23rem;
   overflow-y:scroll;
 }
 
 .dark .tarea-item {
-  background-color: #444; /* Fondo oscuro intermedio */
-  color: var(--clr-primary); /* Texto claro */
-  border: 1px solid #555; /* Borde más oscuro */
+  background-color: #444; 
+  color: var(--clr-primary); 
+  border: 1px solid #555; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -902,53 +1043,54 @@ footer a:hover {
 }
 
 .dark .tarea-item span {
-  color: var(--clr-primary); /* Texto claro */
+  color: var(--clr-primary); 
 }
 
 .dark .tarea-item button {
-  background-color: #555; /* Botones oscuros */
-  color: var(--clr-primary); /* Texto claro */
+  background-color: #555; 
+  color: var(--clr-primary); 
   border: none;
   transition: background-color 0.3s;
 }
 
 .dark .tarea-item button:hover {
-  background-color: #666; /* Botón más claro al pasar el mouse */
+  background-color: #666; 
 }
 
 /* Botón de completar/desmarcar */
 .dark .tarea-item button.tarea-btn {
-  background-color: var(--clr-accent); /* Verde del tema */
+  background-color: var(--clr-accent); 
   color: var(--clr-primary);
 }
 
 .dark .tarea-item button.tarea-btn:hover {
-  background-color: #6ee48c; /* Verde más claro */
+  background-color: #6ee48c; 
 }
 
 /* Botón de editar */
 .dark .tarea-item button.tarea-edit-btn {
-  background-color: #e69500; /* Naranja */
+  background-color: #e69500; 
   color: var(--clr-primary);
 }
 
 .dark .tarea-item button.tarea-edit-btn:hover {
-  background-color: #ffab40; /* Naranja más claro */
+  background-color: #ffab40; 
 }
 
 /* Botón de eliminar */
 .dark .tarea-item button.tarea-delete-btn {
-  background-color: #c62828; /* Rojo oscuro */
+  background-color: #c62828; 
   color: var(--clr-primary);
 }
 
 .dark .tarea-item button.tarea-delete-btn:hover {
-  background-color: #f44336; /* Rojo más claro */
+  background-color: #f44336; 
 }
 
 /* Formulario para nueva tarea */
+
 .dark .nueva-tarea-form {
-  background-color: #333; /* Fondo oscuro */
+  background-color: #333; 
   padding: 10px;
   border-radius: 8px;
   display: flex;
@@ -984,7 +1126,7 @@ footer a:hover {
 }
 
 .dark .nueva-tarea-form button:hover {
-  background-color: #3f804f; /* Verde más claro */
+  background-color: #3f804f; 
 }
 
 .dark .metas-presupuestos-container {
@@ -993,14 +1135,14 @@ footer a:hover {
 }
 
 .dark .metas-list {
-  background-color: #333; /* Fondo oscuro */
+  background-color: #333; 
   color: var(--clr-primary);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .dark .meta-item {
-  background-color: #444; /* Fondo oscuro intermedio */
+  background-color: #444; 
   color: var(--clr-primary);
   border: 1px solid #555;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
@@ -1012,12 +1154,12 @@ footer a:hover {
 }
 
 .dark .meta-item button {
-  background-color: #555; /* Botones oscuros */
+  background-color: #555; 
   color: var(--clr-primary);
 }
 
 .dark .meta-item button:hover {
-  background-color: #666; /* Botón más claro */
+  background-color: #666; 
 }
 
 .dark .meta-item button.meta-btn {
@@ -1026,29 +1168,29 @@ footer a:hover {
 }
 
 .dark .meta-item button.meta-btn:hover {
-  background-color: #6ee48c; /* Verde más claro */
+  background-color: #6ee48c; 
 }
 
 .dark .meta-item button.meta-edit-btn {
-  background-color: #e69500; /* Naranja */
+  background-color: #e69500; 
   color: var(--clr-primary);
 }
 
 .dark .meta-item button.meta-edit-btn:hover {
-  background-color: #ffab40; /* Naranja más claro */
+  background-color: #ffab40; 
 }
 
 .dark .meta-item button.meta-delete-btn {
-  background-color: #c62828; /* Rojo oscuro */
+  background-color: #c62828; 
   color: var(--clr-primary);
 }
 
 .dark .meta-item button.meta-delete-btn:hover {
-  background-color: #f44336; /* Rojo más claro */
+  background-color: #f44336; 
 }
 
 .dark .nueva-meta-form {
-  background-color: #333; /* Fondo oscuro */
+  background-color: #333; 
   padding: 10px;
   border-radius: 8px;
   display: flex;
@@ -1083,9 +1225,103 @@ footer a:hover {
 }
 
 .dark .nueva-meta-form button:hover {
-  background-color: #3f804f; /* Verde más claro */
+  background-color: #3e7e4e; 
 }
 
+/* Modo oscuro para Transacciones */
+.dark .transacciones-container {
+  background-color: var(--clr-secondary);
+  color: var(--clr-primary);
+}
+
+.dark .transacciones-list {
+  background-color: #333; 
+  color: var(--clr-primary); 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dark .transaccion-item {
+  background-color: #444; 
+  color: var(--clr-primary);
+  border: 1px solid #555;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dark .transaccion-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+.dark .transaccion-item span {
+  color: var(--clr-primary); 
+}
+
+/* Botones */
+.dark .transaccion-item .buttons-container button {
+  background-color: #555; 
+  color: var(--clr-primary); 
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.dark .transaccion-item .buttons-container button:hover {
+  background-color: #666; 
+}
+
+.dark .transaccion-item button.transaccion-btn {
+  background-color: var(--clr-accent); 
+  color: var(--clr-primary);
+}
+
+.dark .transaccion-item button.transaccion-btn:hover {
+  background-color: #6ee48c; 
+}
+
+.dark .transaccion-item button.transaccion-edit-btn {
+  background-color: #ffa500; 
+  color: var(--clr-primary);
+}
+
+.dark .transaccion-item button.transaccion-edit-btn:hover {
+  background-color: #ffab40; 
+}
+
+.dark .transaccion-item button.transaccion-delete-btn {
+  background-color: #c62828; 
+  color: var(--clr-primary);
+}
+
+.dark .transaccion-item button.transaccion-delete-btn:hover {
+  background-color: #f44336; 
+}
+
+/* Formulario para nueva transacción */
+.dark .nueva-tarea-form {
+  background-color: #333; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+}
+
+.dark .nueva-tarea-form input {
+  background-color: #ffffff; 
+  color: #000000; 
+  border: 1px solid #000000;
+}
+
+.dark .nueva-tarea-form input::placeholder {
+  color: #040404; 
+}
+
+.dark .nueva-tarea-form button {
+  background-color: var(--clr-accent); 
+  color: var(--clr-primary);
+  border: none;
+}
+
+.dark .nueva-tarea-form button:hover {
+  background-color: #3e7e4e; 
+}
 
 /* Responsivo */
 @media (max-width: 768px) {
