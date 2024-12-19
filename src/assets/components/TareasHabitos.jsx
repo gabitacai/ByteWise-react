@@ -11,6 +11,9 @@ function TareasHabitos() {
     // Estado para los inputs de nueva tarea
     const [nuevaTarea, setNuevaTarea] = useState('');
 
+    // Estado para la tarea en edición
+    const [editando, setEditando] = useState({ id: null, descripcion: '' });
+
     // Función para agregar una nueva tarea
     const agregarTarea = (e) => {
         e.preventDefault();
@@ -35,6 +38,25 @@ function TareasHabitos() {
         ));
     };
 
+    // Función para manejar el inicio de la edición
+    const iniciarEdicion = (id, descripcion) => {
+        setEditando({ id, descripcion });
+    };
+
+    // Función para manejar el cambio en el input de edición
+    const manejarCambioEdicion = (e) => {
+        setEditando({ ...editando, descripcion: e.target.value });
+    };
+
+    // Función para guardar los cambios de edición
+    const guardarEdicion = (e) => {
+        e.preventDefault();
+        setTareas(tareas.map(tarea => 
+            tarea.id === editando.id ? { ...tarea, descripcion: editando.descripcion } : tarea
+        ));
+        setEditando({ id: null, descripcion: '' }); // Reiniciar el estado de edición
+    };
+
     return (
         <div>
             <h1>Gestión de Tareas y Hábitos</h1>
@@ -43,13 +65,34 @@ function TareasHabitos() {
             <ul>
                 {tareas.map(tarea => (
                     <li key={tarea.id}>
-                        <span style={{ textDecoration: tarea.completada ? 'line-through' : 'none' }}>
-                            {tarea.descripcion}
-                        </span>
-                        <button onClick={() => toggleCompletada(tarea.id)}>
-                            {tarea.completada ? 'Desmarcar' : 'Completar'}
-                        </button>
-                        <button onClick={() => eliminarTarea(tarea.id)}>Eliminar</button>
+                        {editando.id === tarea.id ? (
+                            // Mostrar el formulario de edición si estamos editando esta tarea
+                            <form onSubmit={guardarEdicion}>
+                                <input 
+                                    type="text" 
+                                    value={editando.descripcion} 
+                                    onChange={manejarCambioEdicion} 
+                                    required 
+                                />
+                                <button type="submit">Guardar</button>
+                                <button onClick={() => setEditando({ id: null, descripcion: '' })}>
+                                    Cancelar
+                                </button>
+                            </form>
+                        ) : (
+                            <>
+                                <span style={{ textDecoration: tarea.completada ? 'line-through' : 'none' }}>
+                                    {tarea.descripcion}
+                                </span>
+                                <button onClick={() => toggleCompletada(tarea.id)}>
+                                    {tarea.completada ? 'Desmarcar' : 'Completar'}
+                                </button>
+                                <button onClick={() => iniciarEdicion(tarea.id, tarea.descripcion)}>
+                                    Editar
+                                </button>
+                                <button onClick={() => eliminarTarea(tarea.id)}>Eliminar</button>
+                            </>
+                        )}
                     </li>
                 ))}
             </ul>

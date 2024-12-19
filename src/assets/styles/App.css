@@ -597,6 +597,114 @@ label {
 footer a:hover {
   text-decoration: underline;
 }
+/* TAREAS Y HÁBITOS NUEVO */
+
+/* Contenedor principal */
+.tareas-habitos-container {
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Lista de tareas */
+.tareas-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tarea-item {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarea-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tarea-item span {
+  flex: 1;
+}
+
+/* Botones de acción */
+.tarea-item button {
+  margin-left: 10px;
+  padding: 5px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Botón de completar/desmarcar */
+.tarea-item button.tarea-btn {
+  background-color: #50c878;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.tarea-item button.tarea-btn:hover {
+  background-color: #45a049;
+}
+
+/* Botón de editar */
+.tarea-item button.tarea-edit-btn {
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.tarea-item button.tarea-edit-btn:hover {
+  background-color: #e69500;
+}
+
+/* Botón de eliminar */
+.tarea-item button.tarea-delete-btn {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.tarea-item button.tarea-delete-btn:hover {
+  background-color: #e5533e;
+}
+
+/* Input para nueva tarea y edición */
+.nueva-tarea-form input {
+  padding: 10px;
+  width: calc(100% - 22px);
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.nueva-tarea-form button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nueva-tarea-form button:hover {
+  background-color: #0056b3;
+}
 
 /* Modo oscuro */
 
@@ -695,3 +803,4 @@ footer a:hover {
   color: #fff;
   border-left: 5px solid #80e27e;  /* Borde verde claro */
 }
+
