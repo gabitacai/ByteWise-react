@@ -58,39 +58,56 @@ function TareasHabitos() {
     };
 
     return (
-        <div>
+        <div className="tareas-habitos-container">
             <h1>Gestión de Tareas y Hábitos</h1>
 
             <h3>Lista de Tareas</h3>
-            <ul>
+            <ul className="tareas-list">
                 {tareas.map(tarea => (
-                    <li key={tarea.id}>
+                    <li key={tarea.id} className="tarea-item">
                         {editando.id === tarea.id ? (
                             // Mostrar el formulario de edición si estamos editando esta tarea
-                            <form onSubmit={guardarEdicion}>
+                            <form className="tarea-editar-form" onSubmit={guardarEdicion}>
                                 <input 
                                     type="text" 
                                     value={editando.descripcion} 
                                     onChange={manejarCambioEdicion} 
                                     required 
                                 />
-                                <button type="submit">Guardar</button>
-                                <button onClick={() => setEditando({ id: null, descripcion: '' })}>
+                                <button type="submit" className="guardar-btn">Guardar</button>
+                                <button 
+                                    type="button" 
+                                    className="cancelar-btn" 
+                                    onClick={() => setEditando({ id: null, descripcion: '' })}
+                                >
                                     Cancelar
                                 </button>
                             </form>
                         ) : (
                             <>
-                                <span style={{ textDecoration: tarea.completada ? 'line-through' : 'none' }}>
+                                <span 
+                                    style={{ textDecoration: tarea.completada ? 'line-through' : 'none' }}
+                                >
                                     {tarea.descripcion}
                                 </span>
-                                <button onClick={() => toggleCompletada(tarea.id)}>
+                                <button 
+                                    className="tarea-btn" 
+                                    onClick={() => toggleCompletada(tarea.id)}
+                                >
                                     {tarea.completada ? 'Desmarcar' : 'Completar'}
                                 </button>
-                                <button onClick={() => iniciarEdicion(tarea.id, tarea.descripcion)}>
+                                <button 
+                                    className="tarea-edit-btn" 
+                                    onClick={() => iniciarEdicion(tarea.id, tarea.descripcion)}
+                                >
                                     Editar
                                 </button>
-                                <button onClick={() => eliminarTarea(tarea.id)}>Eliminar</button>
+                                <button 
+                                    className="tarea-delete-btn" 
+                                    onClick={() => eliminarTarea(tarea.id)}
+                                >
+                                    Eliminar
+                                </button>
                             </>
                         )}
                     </li>
@@ -98,7 +115,7 @@ function TareasHabitos() {
             </ul>
 
             <h3>Agregar Nueva Tarea</h3>
-            <form onSubmit={agregarTarea}>
+            <form className="nueva-tarea-form" onSubmit={agregarTarea}>
                 <input 
                     type="text" 
                     placeholder="Descripción de la tarea" 

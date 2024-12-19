@@ -377,7 +377,7 @@ html {
 .form-container,
 .register-container {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 5rem auto;
   padding: 2rem;
   text-align: center;
   font-family: Arial, sans-serif;
@@ -597,6 +597,7 @@ label {
 footer a:hover {
   text-decoration: underline;
 }
+
 /* TAREAS Y HÁBITOS NUEVO */
 
 /* Contenedor principal */
@@ -604,10 +605,14 @@ footer a:hover {
   margin-top: 30px;
   text-align: center;
   margin-bottom: 30px;
+  flex: 1;
+  
 }
 
 /* Lista de tareas */
 .tareas-list {
+  height: 23rem;
+  overflow-y:scroll;
   list-style-type: none;
   padding: 0;
   margin: 0;
