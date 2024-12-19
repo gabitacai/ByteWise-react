@@ -397,6 +397,7 @@ label {
   border: 1px solid #ccc;
   font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
+  resize: none;
 }
 
 .form-btn {
