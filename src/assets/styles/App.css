@@ -805,40 +805,40 @@ footer a:hover {
 }
 
 .dark .alertas-container {
-  background-color: #333;  /* Fondo oscuro para el contenedor */
-  color: #fff;  /* Texto blanco */
+  background-color: #333;  
+  color: #fff;  
 }
 
 .dark .alerta-item {
-  background-color: #444;  /* Fondo oscuro para las alertas */
-  border-left: 5px solid #80e27e;  /* Borde verde claro para sugerencias */
+  background-color: #444;  
+  border-left: 5px solid #80e27e;  
 }
 
 .dark .alerta-item.warning {
-  background-color: #c62828;  /* Fondo rojo para alertas en modo oscuro */
+  background-color: #c62828;  
   color: #fff;
-  border-left: 5px solid #f44336;  /* Borde rojo */
+  border-left: 5px solid #f44336;  
 }
 
 .dark .alerta-item.suggestion {
-  background-color: #388e3c;  /* Fondo verde oscuro */
+  background-color: #388e3c;  
   color: #fff;
-  border-left: 5px solid #80e27e;  /* Borde verde claro */
+  border-left: 5px solid #80e27e;  
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
   .tareas-list {
-    width: 95%; /* Ajuste para pantallas pequeñas */
-    max-height: 300px; /* Altura máxima ajustada */
+    width: 95%; 
+    max-height: 300px; 
   }
 
   .nueva-tarea-form {
     flex-direction: column;
-    gap: 5px; /* Reduce el espacio entre los elementos */
+    gap: 5px; 
   }
 
   .nueva-tarea-form button {
-    width: 100%; /* Botón ocupa todo el ancho */
+    width: 100%; 
   }
 }
