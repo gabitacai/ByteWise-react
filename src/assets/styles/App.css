@@ -204,26 +204,26 @@ html {
 
 /* Botón "Editar" (naranja) */
 .meta-item button.meta-edit-btn {
-  background-color: #ffa500;  /* Naranja */
+  background-color: #ffa500; 
   color: white;
   border: none;
   font-weight: 600;
 }
 
 .meta-item button.meta-edit-btn:hover {
-  background-color: #e69500;  /* Naranja más oscuro */
+  background-color: #e69500;  
 }
 
 /* Botón "Eliminar" (rojo) */
 .meta-item button.meta-delete-btn {
-  background-color: #ff6347;  /* Rojo tomate */
+  background-color: #ff6347;  
   color: white;
   border: none;
   font-weight: 600;
 }
 
 .meta-item button.meta-delete-btn:hover {
-  background-color: #e5533e;  /* Rojo tomate más oscuro */
+  background-color: #e5533e;  
 }
 
 .edit-form {
@@ -377,7 +377,7 @@ html {
 .form-container,
 .register-container {
   max-width: 500px;
-  margin: 5rem auto;
+  margin: 6rem auto;
   padding: 2rem;
   text-align: center;
   font-family: Arial, sans-serif;
@@ -606,23 +606,31 @@ footer a:hover {
   text-align: center;
   margin-bottom: 30px;
   flex: 1;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Lista de tareas */
 .tareas-list {
-  height: 23rem;
-  overflow-y:scroll;
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  width: 90%; 
+  max-width: 600px; 
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 23rem;
+  overflow-y:scroll;
+  max-height: 400px; 
 }
 
 .tarea-item {
   background: #f9f9f9;
   border: 1px solid #ccc;
   padding: 15px;
-  margin: 10px 0;
+  margin: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -632,7 +640,7 @@ footer a:hover {
 }
 
 .tarea-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -686,11 +694,19 @@ footer a:hover {
   background-color: #e5533e;
 }
 
-/* Input para nueva tarea y edición */
+/* Formulario para nueva tarea */
+.nueva-tarea-form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 90%; /* Ocupa el 90% del contenedor por defecto */
+  max-width: 600px; /* Ancho máximo */
+}
+
 .nueva-tarea-form input {
   padding: 10px;
-  width: calc(100% - 22px);
-  margin-right: 10px;
+  flex: 1; /* Ocupa el espacio disponible */
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
@@ -710,6 +726,7 @@ footer a:hover {
 .nueva-tarea-form button:hover {
   background-color: #0056b3;
 }
+
 
 /* Modo oscuro */
 
@@ -809,3 +826,19 @@ footer a:hover {
   border-left: 5px solid #80e27e;  /* Borde verde claro */
 }
 
+/* Responsivo */
+@media (max-width: 768px) {
+  .tareas-list {
+    width: 95%; /* Ajuste para pantallas pequeñas */
+    max-height: 300px; /* Altura máxima ajustada */
+  }
+
+  .nueva-tarea-form {
+    flex-direction: column;
+    gap: 5px; /* Reduce el espacio entre los elementos */
+  }
+
+  .nueva-tarea-form button {
+    width: 100%; /* Botón ocupa todo el ancho */
+  }
+}
