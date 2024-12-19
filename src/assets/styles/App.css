@@ -907,6 +907,44 @@ footer a:hover {
   background-color: #2e7b68;
 }
 
+/* MODAL */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal-btn {
+  background-color: #ff5e57;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-modal-btn:hover {
+  background-color: #ff3b30;
+}
+
+
 
 /* Modo oscuro */
 
@@ -972,7 +1010,7 @@ footer a:hover {
   border: none;
   font-weight: 600;
   border-radius: 4px;
-  color: var(--clr-primary);
+  color: var(--clr-secondary);
   cursor: pointer;
 }
 
@@ -1322,6 +1360,26 @@ footer a:hover {
 
 .dark .nueva-tarea-form button:hover {
   background-color: #3e7e4e; 
+}
+
+.dark .modal {
+  background-color: #333; 
+  color: var(--clr-primary); 
+}
+
+.dark .modal h2 {
+  color: var(--clr-accent); 
+}
+
+.dark .modal p {
+  color: #fff; 
+}
+.dark .close-modal-btn {
+  background-color: #50c878; 
+}
+
+.dark .close-modal-btn:hover {
+  background-color: #388e3c; 
 }
 
 /* Responsivo */
