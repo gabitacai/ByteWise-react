@@ -145,52 +145,73 @@ html {
 }
 
 /* MetasPresupuestos */
+/* Contenedor principal */
 .metas-presupuestos-container {
   margin-top: 30px;
   text-align: center;
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Lista de metas */
 .metas-list {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 700px; /* Ancho máximo mayor */
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 450px; /* Mayor altura para que quepan más elementos */
+  overflow-y: auto;
 }
 
 .meta-item {
   background: #f9f9f9;
   border: 1px solid #ccc;
   padding: 15px;
-  margin: 10px 0;
+  margin: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Asegura que el texto y botones estén separados */
   align-items: center;
   transition: transform 0.3s, box-shadow 0.3s;
+  gap: 15px; /* Espaciado entre el texto y los botones */
 }
 
 .meta-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .meta-item span {
-  flex: 1;
+  flex: 1; /* Texto ocupa espacio disponible */
+  margin-right: 15px;
+  font-size: 16px;
+  word-wrap: break-word; /* Rompe el texto largo */
 }
 
-/* Estilo para los botones de "Completar", "Editar" y "Eliminar" */
+/* Contenedor para los botones */
+.meta-item .buttons-container {
+  display: flex;
+  gap: 10px; /* Espaciado entre botones */
+}
+
+/* Botones de acción */
 .meta-item button {
-  margin-left: 10px;
-  padding: 5px 15px;
+  margin-top: 0; /* Elimina el margen superior adicional */
+  margin-left: 0; /* Alineación ajustada */
+  padding: 8px 12px;
   font-size: 14px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-/* Botón "Completar" y "Reactivar" */
+/* Botón de completar/desmarcar */
 .meta-item button.meta-btn {
   background-color: #50c878;
   color: white;
@@ -202,95 +223,37 @@ html {
   background-color: #45a049;
 }
 
-/* Botón "Editar" (naranja) */
+/* Botón de editar */
 .meta-item button.meta-edit-btn {
-  background-color: #ffa500; 
+  background-color: #ffa500;
   color: white;
   border: none;
   font-weight: 600;
 }
 
 .meta-item button.meta-edit-btn:hover {
-  background-color: #e69500;  
+  background-color: #e69500;
 }
 
-/* Botón "Eliminar" (rojo) */
+/* Botón de eliminar */
 .meta-item button.meta-delete-btn {
-  background-color: #ff6347;  
+  background-color: #ff6347;
   color: white;
   border: none;
   font-weight: 600;
 }
 
 .meta-item button.meta-delete-btn:hover {
-  background-color: #e5533e;  
-}
-
-.edit-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.edit-form input {
-  padding: 8px;
-  font-size: 14px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.edit-form button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  border: 1px solid #ccc; 
-  background-color: #50c878; 
-  color: white; 
-  font-weight: bold;
-}
-
-
-.edit-form button:nth-of-type(1) {
-  background-color: #50c878;
-}
-
-.edit-form button:nth-of-type(1):hover {
-  background-color: #45a049;
-}
-
-
-.edit-form button:nth-of-type(2) {
-  background-color: #ff6347; 
-}
-
-.edit-form button:nth-of-type(2):hover {
   background-color: #e5533e;
 }
 
 
-.edit-form button:focus {
-  outline: none; 
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-
-.edit-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; 
-  width: 100%;
-  max-width: 300px; 
-  margin: 20px auto; 
-}
-
-/* Botón principal de agregar meta */
+/* Botón principal para agregar metas */
 .btn-primary {
-  background-color: #50c878;
+  background-color: var(--clr-accent)!important;
   color: white;
   font-weight: bold;
-  padding: 10px;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   text-decoration: none;
@@ -301,6 +264,29 @@ html {
 .btn-primary:hover {
   background-color: #45a049;
 }
+
+/* Formulario de edición */
+.edit-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.edit-form input {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+.edit-form button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 
 /* AlertasRecomendaciones */
 
@@ -415,7 +401,7 @@ label {
 
 .form-btn {
   padding: 10px 40px;
-  background-color: --clr-accent;
+  background-color: var(--clr-accent);
   border: none;
   color: white;
   font-size: 16px;
@@ -474,24 +460,33 @@ label {
 }
 
 .facebook-btn {
-  padding: 0.75rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
   background-color: #3b5998;
   color: white;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .google-btn {
-  padding: 0.75rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
   background-color: #db4437;
   color: white;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .apple-btn {
-  padding: 0.75rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
   background-color: #000000;
   color: white;
   font-weight: bold;
+  cursor: pointer;
 }
 
 
@@ -598,9 +593,47 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* METAS */
+
+.nueva-meta-form {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 6px rgba(150, 150, 150, 0.427);
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 600px; 
+}
+
+.nueva-meta-form input {
+  padding: 10px;
+  flex: 1; /* Ocupa el espacio disponible */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.nueva-meta-form button {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: var(--clr-accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nueva-meta-form button:hover {
+  background-color: #2e7b68;
+}
+
+
 /* TAREAS Y HÁBITOS NUEVO */
 
-/* Contenedor principal */
 .tareas-habitos-container {
   margin-top: 30px;
   text-align: center;
@@ -696,12 +729,16 @@ footer a:hover {
 
 /* Formulario para nueva tarea */
 .nueva-tarea-form {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 6px rgba(150, 150, 150, 0.427);
   margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 10px;
-  width: 90%; /* Ocupa el 90% del contenedor por defecto */
-  max-width: 600px; /* Ancho máximo */
+  width: 90%; 
+  max-width: 600px; 
 }
 
 .nueva-tarea-form input {
@@ -715,7 +752,8 @@ footer a:hover {
 .nueva-tarea-form button {
   padding: 10px 15px;
   font-size: 16px;
-  background-color: #007bff;
+  font-weight: bold;
+  background-color: var(--clr-accent);
   color: white;
   border: none;
   border-radius: 4px;
@@ -724,7 +762,7 @@ footer a:hover {
 }
 
 .nueva-tarea-form button:hover {
-  background-color: #0056b3;
+  background-color: #2e7b68;
 }
 
 
@@ -799,6 +837,7 @@ footer a:hover {
 .theme-toggle-btn:hover {
   background-color: #9bb99c;
 }
+
 .dark .meta-item{
   background-color: #333;
   color: #50c878;
@@ -826,6 +865,228 @@ footer a:hover {
   border-left: 5px solid #80e27e;  
 }
 
+/* Modo oscuro para Tareas y Hábitos */
+.dark .tareas-habitos-container {
+  background-color: var(--clr-secondary);
+  color: var(--clr-primary);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dark .tareas-list {
+  background-color: #333; /* Fondo oscuro */
+  color: var(--clr-primary); /* Texto claro */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  width: 90%; /* Ocupa el 90% del contenedor */
+  max-width: 600px; /* Ancho máximo */  
+  height: 23rem;
+  overflow-y:scroll;
+}
+
+.dark .tarea-item {
+  background-color: #444; /* Fondo oscuro intermedio */
+  color: var(--clr-primary); /* Texto claro */
+  border: 1px solid #555; /* Borde más oscuro */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dark .tarea-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+.dark .tarea-item span {
+  color: var(--clr-primary); /* Texto claro */
+}
+
+.dark .tarea-item button {
+  background-color: #555; /* Botones oscuros */
+  color: var(--clr-primary); /* Texto claro */
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.dark .tarea-item button:hover {
+  background-color: #666; /* Botón más claro al pasar el mouse */
+}
+
+/* Botón de completar/desmarcar */
+.dark .tarea-item button.tarea-btn {
+  background-color: var(--clr-accent); /* Verde del tema */
+  color: var(--clr-primary);
+}
+
+.dark .tarea-item button.tarea-btn:hover {
+  background-color: #6ee48c; /* Verde más claro */
+}
+
+/* Botón de editar */
+.dark .tarea-item button.tarea-edit-btn {
+  background-color: #e69500; /* Naranja */
+  color: var(--clr-primary);
+}
+
+.dark .tarea-item button.tarea-edit-btn:hover {
+  background-color: #ffab40; /* Naranja más claro */
+}
+
+/* Botón de eliminar */
+.dark .tarea-item button.tarea-delete-btn {
+  background-color: #c62828; /* Rojo oscuro */
+  color: var(--clr-primary);
+}
+
+.dark .tarea-item button.tarea-delete-btn:hover {
+  background-color: #f44336; /* Rojo más claro */
+}
+
+/* Formulario para nueva tarea */
+.dark .nueva-tarea-form {
+  background-color: #333; /* Fondo oscuro */
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 90%;
+  max-width: 600px;
+}
+
+.dark .nueva-tarea-form input {
+  background-color: #ffffff; 
+  color: black; 
+  border: 1px solid #555; 
+  padding: 10px;
+  flex: 1;
+  border-radius: 4px;
+}
+
+.dark .nueva-tarea-form input::placeholder {
+  color: #000000; 
+}
+
+.dark .nueva-tarea-form button {
+  background-color: var(--clr-accent);
+  color: var(--clr-primary);
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dark .nueva-tarea-form button:hover {
+  background-color: #3f804f; /* Verde más claro */
+}
+
+.dark .metas-presupuestos-container {
+  background-color: var(--clr-secondary);
+  color: var(--clr-primary);
+}
+
+.dark .metas-list {
+  background-color: #333; /* Fondo oscuro */
+  color: var(--clr-primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dark .meta-item {
+  background-color: #444; /* Fondo oscuro intermedio */
+  color: var(--clr-primary);
+  border: 1px solid #555;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.dark .meta-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+.dark .meta-item button {
+  background-color: #555; /* Botones oscuros */
+  color: var(--clr-primary);
+}
+
+.dark .meta-item button:hover {
+  background-color: #666; /* Botón más claro */
+}
+
+.dark .meta-item button.meta-btn {
+  background-color: var(--clr-accent);
+  color: var(--clr-primary);
+}
+
+.dark .meta-item button.meta-btn:hover {
+  background-color: #6ee48c; /* Verde más claro */
+}
+
+.dark .meta-item button.meta-edit-btn {
+  background-color: #e69500; /* Naranja */
+  color: var(--clr-primary);
+}
+
+.dark .meta-item button.meta-edit-btn:hover {
+  background-color: #ffab40; /* Naranja más claro */
+}
+
+.dark .meta-item button.meta-delete-btn {
+  background-color: #c62828; /* Rojo oscuro */
+  color: var(--clr-primary);
+}
+
+.dark .meta-item button.meta-delete-btn:hover {
+  background-color: #f44336; /* Rojo más claro */
+}
+
+.dark .nueva-meta-form {
+  background-color: #333; /* Fondo oscuro */
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 600px;
+}
+
+.dark .nueva-meta-form input {
+  background-color: #ffffff; 
+  color: black; 
+  border: 1px solid #555; 
+  padding: 10px;
+  flex: 1;
+  border-radius: 4px;
+}
+
+.dark .nueva-meta-form input::placeholder {
+  color: #000000; 
+}
+
+.dark .nueva-meta-form button {
+  background-color: var(--clr-accent);
+  color: var(--clr-primary);
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dark .nueva-meta-form button:hover {
+  background-color: #3f804f; /* Verde más claro */
+}
+
+
 /* Responsivo */
 @media (max-width: 768px) {
   .tareas-list {
@@ -841,4 +1102,22 @@ footer a:hover {
   .nueva-tarea-form button {
     width: 100%; 
   }
+  .metas-list {
+    width: 95%; /* Ajuste para pantallas pequeñas */
+    max-height: 300px; /* Altura máxima ajustada */
+  }
+
+  .meta-item {
+    flex-direction: column; /* Botones en columna */
+    align-items: flex-start; /* Alinea texto y botones al inicio */
+  }
+
+  .meta-item button {
+    width: 100%; /* Botones ocupan todo el ancho */
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
 }
