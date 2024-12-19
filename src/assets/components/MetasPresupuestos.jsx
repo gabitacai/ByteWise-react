@@ -112,7 +112,7 @@ function MetasPresupuestos() {
                     onChange={(e) => setNuevaMeta({ ...nuevaMeta, monto: e.target.value })}
                     required
                 />
-                <button type="submit">Agregar Meta</button>
+                <button type="submit">Nueva Meta</button>
             </form>
         </div>
     );
